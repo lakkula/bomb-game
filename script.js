@@ -59,9 +59,17 @@ function createBoard(){
         const card = document.createElement('img');
         card.setAttribute('data-id',index);
         card.setAttribute('src','images/dot.jpg');
+        card.addEventListener('click',flipCard)
         gridDisplay.appendChild(card);
 
-    })
+    });
 }
 
 createBoard();
+
+function flipCard(){
+    const cardId = this.getAttribute('data-id');
+    console.log(cardId);
+    console.log(imageArray);
+    this.setAttribute('src',imageArray[cardId].image);
+}
